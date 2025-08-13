@@ -11,6 +11,7 @@ import UsersPage from "./screens/users.page.tsx";
 import { TeamOutlined, FireOutlined } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Menu } from "antd";
+import TracksPage from "./screens/tracks.page.tsx";
 
 // import "./App.scss";
 
@@ -25,6 +26,11 @@ const items: MenuItem[] = [
   {
     label: <Link to="/users">Manage Users</Link>,
     key: "users",
+    icon: <TeamOutlined />,
+  },
+  {
+    label: <Link to="/tracks">Manage Tracks</Link>,
+    key: "tracks",
     icon: <TeamOutlined />,
   },
 ];
@@ -87,6 +93,10 @@ const router = createBrowserRouter([
       {
         path: "users",
         element: <UsersPage />,
+      },
+      {
+        path: "tracks",
+        element: <TracksPage />,
       },
     ],
   },
