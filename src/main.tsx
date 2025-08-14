@@ -8,10 +8,16 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import UsersPage from "./screens/users.page.tsx";
-import { TeamOutlined, FireOutlined } from "@ant-design/icons";
+import {
+  TeamOutlined,
+  FireOutlined,
+  AudioOutlined,
+  BookOutlined,
+} from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Menu } from "antd";
 import TracksPage from "./screens/tracks.page.tsx";
+import CommentsPage from "./screens/comments.page.tsx";
 
 // import "./App.scss";
 
@@ -31,7 +37,12 @@ const items: MenuItem[] = [
   {
     label: <Link to="/tracks">Manage Tracks</Link>,
     key: "tracks",
-    icon: <TeamOutlined />,
+    icon: <AudioOutlined />,
+  },
+  {
+    label: <Link to="/comments">Manage Comments</Link>,
+    key: "comments",
+    icon: <BookOutlined />,
   },
 ];
 
@@ -98,12 +109,11 @@ const router = createBrowserRouter([
         path: "tracks",
         element: <TracksPage />,
       },
+      {
+        path: "comments",
+        element: <CommentsPage />,
+      },
     ],
-  },
-
-  {
-    path: "/tracks",
-    element: <div>Mange Tracks</div>,
   },
 ]);
 
